@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  
+  <script>
+    
+	//先用"陣列"將所有圖片的網址框起來
+    const house = ["https://farm9.staticflickr.com/8618/16628225876_aa1bca7c21_z.jpg",
+                 "https://storage.googleapis.com/crossing-cms-cwg-tw/article/201807/article-5b56b75b04144.jpg",
+                 "https://4.share.photo.xuite.net/super.stars/141bd1f/13985801/733854230_m.jpg"
+                 ]
+    
+	//再用"for迴圈"把其變為自動化
+    var i = 0;
+    
+    function f1(x)
+    {
+      i=(i+x+house.length) % house.length;
+      document.getElementById("x").innerHTML =`<img src="${house[i]}" height="500px">`
+    }
+      
+  </script>
+  
+</head>
+
+<body onload="f1(-1);">  
+
+  <div id="x">
+  </div>
+  
+  <a href="javascript:f1(-1);">上一張</a>
+  <a href="javascript:f1(1);">下一張</a>
+  
+  <div>
+      <iframe width="400" height="300" src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=51.17902322139554,%20-1.8262901035239516&z=16&t=h&output=embed">
+  <\iframe>
+  <\div>  
+  
+  
+</body>
+</html>

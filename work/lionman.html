@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  
+  <script>
+    
+	//先用"陣列"將所有圖片的網址框起來
+    const house = ["http://www.sundaytour.com.tw/upfiles/chinese/attractions/tw_attractions_caty01481733631.jpg",
+                 "https://i2.jueshifan.com/205a28/7b007a87/38512bc50dafa5548639.jpg",
+                 "https://image.cdn-eztravel.com.tw/0y93hUsNFckw64JduFQhEUc8YJpBx9EtM8K1R3o8mr0/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L3BvaS9FRy9DQUkvR3JlYXRTcGhpbnhPZkdpemEmR2l6YVB5cmFtaWRzL3NodXR0ZXJzdG9ja180MDY0NzEzNTFjb21wcmVzcy5qcGc.jpg"
+                 ]
+    
+	//再用"for迴圈"把其變為自動化
+    var i = 0;
+    
+    function f1(x)
+    {
+      i=(i+x+house.length) % house.length;
+      document.getElementById("x").innerHTML =`<img src="${house[i]}" height="500px">`
+    }
+      
+  </script>
+  
+</head>
+
+<body onload="f1(-1);">  
+  <h1>獅身人面像</h1>
+  
+  <div id="x">
+  </div>
+  
+  <a href="javascript:f1(-1);">上一張</a>
+  <a href="javascript:f1(1);">下一張</a>
+  <br><br>
+  
+  <div>
+      <iframe width="400" height="300" src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=29.97544526317708,%2031.13753521131361&z=16&t=h&output=embed">
+  <\iframe>
+  <\div>  
+  
+  
+</body>
+</html>

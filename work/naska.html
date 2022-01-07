@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  
+  <script>
+    
+	//先用"陣列"將所有圖片的網址框起來
+    const house = ["https://lh3.googleusercontent.com/proxy/rZwVGVUtC65W4sG9AuphYY_oTya4FGLzFf6sdcwWi0iNvgKZmWx9jhj5UDzhPss0Oa4GdV0mQ5RyY8kJdSWS6s2bCpNeDy-LnlCmPb8yMZLVBZCd5hWwuvRIl8pS",
+                 "https://www.sundaytour.com.tw/upfiles/chinese/attractions/tw_attractions_caty1503392438.jpg",
+                 "https://b.share.photo.xuite.net/catbeen/1bc59b1/11669907/549699870_m.jpg"
+                 ]
+    
+	//再用"for迴圈"把其變為自動化
+    var i = 0;
+    
+    function f1(x)
+    {
+      i=(i+x+house.length) % house.length;
+      document.getElementById("x").innerHTML =`<img src="${house[i]}" height="500px">`
+    }
+      
+  </script>
+  
+</head>
+
+<body onload="f1(-1);">  
+
+  <div id="x">
+  </div>
+  
+  <a href="javascript:f1(-1);">上一張</a>
+  <a href="javascript:f1(1);">下一張</a>
+  
+  <div>
+      <iframe width="400" height="300" src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=-14.738860976844315,%20-75.13004791760515&z=16&t=h&output=embed">
+  <\iframe>
+  <\div>  
+  
+  
+</body>
+</html>

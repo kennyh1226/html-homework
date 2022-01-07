@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  
+  <script>
+    
+	//先用"陣列"將所有圖片的網址框起來
+    const house = ["https://upload.wikimedia.org/wikipedia/commons/1/17/The_Great_wall_-_by_Hao_Wei.jpg",
+                 "https://i.epochtimes.com/assets/uploads/2020/06/shutterstock_275490581-450x300.jpg",
+                 "https://p1.nanmuxuan.com/images/b5/e6fa9145de36d8de.jpg"
+                 ]
+    
+	//再用"for迴圈"把其變為自動化
+    var i = 0;
+    
+    function f1(x)
+    {
+      i=(i+x+house.length) % house.length;
+      document.getElementById("x").innerHTML =`<img src="${house[i]}" height="500px">`
+    }
+      
+  </script>
+  
+</head>
+
+<body onload="f1(-1);">  
+  <h1>萬里長城</h1>
+  
+  <div id="x">
+  </div>
+  
+  <a href="javascript:f1(-1);">上一張</a>
+  <a href="javascript:f1(1);">下一張</a>
+  <br><br>
+  
+  <div>
+      <iframe width="400" height="300" src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=40.43203834397325,%20116.57033198269438&z=16&t=h&output=embed">
+  <\iframe>
+  <\div>  
+  
+  
+</body>
+</html>
